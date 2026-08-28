@@ -240,6 +240,25 @@ html.lenis body {
   }
 }
 
+/* Background Cross Drift & Pulse */
+@keyframes cross-drift {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+@keyframes cross-pulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 /* Marquee infinite scroll - CSS animation for zero JS overhead */
 @keyframes marquee-scroll-left {
   0% {

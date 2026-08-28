@@ -1,6 +1,6 @@
 import { memo, useRef, useState, useEffect } from 'react';
 import { Gsap, useGsapReducedMotion, useGsapScroll, useGsapTransform } from '../utils/gsapAnimate';
-import { Terminal, Code2, Database, Cpu, Download, ArrowUpRight } from 'lucide-react';
+import { Terminal, Code2, Database, Cpu, Download, ArrowUpRight, Server, Network, Layers, Activity } from 'lucide-react';
 
 // Shared Intl formatter — created once, reused on every tick
 const jakartaFormatter = new Intl.DateTimeFormat('en-US', {
@@ -167,14 +167,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           }}
         />
 
-        {/* 2. Plus/Cross Pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M40 38v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z' fill='%23FFFFFF' fill-opacity='1' fill-rule='nonzero'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundPosition: 'center center'
-          }}
-        />
+
 
         <div
           className="absolute inset-0"
@@ -254,6 +247,8 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           {/* Left Decoration */}
           <OrbitingDecoration icon={Code2} delay={0.15} className="left-0 sm:left-2 lg:left-16 top-2" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
           <OrbitingDecoration icon={Terminal} delay={0.45} className="left-6 sm:left-12 lg:left-28 bottom-8 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Server} delay={0.35} className="left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 hidden md:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Activity} delay={0.55} className="left-20 sm:left-32 lg:left-48 -top-8 hidden lg:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
 
           <Gsap.h1
             initial={false}
@@ -276,6 +271,8 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           {/* Right Decoration */}
           <OrbitingDecoration icon={Database} delay={0.28} className="right-0 sm:right-2 lg:right-16 top-10" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
           <OrbitingDecoration icon={Cpu} delay={0.58} className="right-6 sm:right-12 lg:right-28 -bottom-2 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Network} delay={0.42} className="right-2 sm:right-4 lg:right-6 top-1/3 hidden md:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Layers} delay={0.65} className="right-24 sm:right-36 lg:right-56 -top-4 hidden lg:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
         </div>
 
         {/* 3. Clean Slogan with Green Accent */}

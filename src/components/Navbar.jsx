@@ -118,7 +118,7 @@ const Navbar = memo(function Navbar() {
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className={`group pointer-events-auto flex items-center gap-3 px-5 py-2.5 rounded-full backdrop-blur-md border transition-all duration-500 cursor-pointer ${isOnDarkSection ? 'bg-black/25 border-white/25 shadow-[0_8px_24px_rgba(0,0,0,0.22)]' : scrolled ? 'bg-black/50 border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.04)]' : 'bg-transparent border-transparent'}`}
+          className={`group pointer-events-auto flex items-center gap-3 px-5 py-2.5 rounded-full backdrop-blur-md border transition-all duration-500 cursor-pointer ${isOnDarkSection ? 'bg-transparent border-cyan-500/30 shadow-[0_8px_24px_rgba(0,0,0,0.22)]' : scrolled ? 'bg-transparent border-cyan-500/20 shadow-[0_8px_32px_rgba(0,0,0,0.04)]' : 'bg-transparent border-transparent'}`}
         >
 
           <span className={`text-sm font-black tracking-[0.16em] md:tracking-[0.2em] uppercase transition-colors duration-300 ${isOnDarkSection ? 'text-white' : 'text-white'}`}>
@@ -211,7 +211,7 @@ const Navbar = memo(function Navbar() {
 
       {/* ── Desktop Menu (Floating Capsule with Gliding Pill) ── */}
       <div className={`hidden lg:flex items-center pointer-events-auto absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? 'top-6 scale-100' : 'top-8 scale-105'}`}>
-        <div className={`flex items-center p-1.5 backdrop-blur-xl border shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full relative transition-colors duration-500 ${isOnDarkSection ? 'bg-black/25 border-white/25' : 'bg-black/50 border-white/10'}`}>
+        <div className={`flex items-center p-1.5 backdrop-blur-md border shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full relative transition-colors duration-500 ${isOnDarkSection ? 'bg-transparent border-cyan-500/30' : 'bg-transparent border-cyan-500/20'}`}>
           {NAV_ITEMS.map((item, index) => (
             <Magnetic key={item.sectionId}>
               <button
@@ -239,7 +239,7 @@ const Navbar = memo(function Navbar() {
         <Magnetic>
           <button
             onClick={() => scrollTo('contact-section')}
-            className={`group relative overflow-hidden flex items-center gap-3 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.12em] md:tracking-[0.16em] hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-500 ${isOnDarkSection ? 'bg-white text-black' : 'bg-black border border-white/10 text-white'}`}
+            className={`group relative overflow-hidden flex items-center gap-3 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.12em] md:tracking-[0.16em] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all duration-500 bg-transparent border border-cyan-500/30 text-white`}
           >
             {/* Core Label */}
             <span className="relative z-10 pl-2">Let's Talk</span>
