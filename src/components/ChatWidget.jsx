@@ -29,7 +29,7 @@ const COMMANDS = {
             "  clear      Clear terminal",
             "  ──────────────────────────────",
             "",
-            "  Or just ask me anything about Zickrian!"
+            "  Or just ask me anything about Mahateer!"
         ].join('\n')
     },
     ls: {
@@ -60,7 +60,7 @@ const COMMANDS = {
             }
             return [
                 "        ╭──────────────────────╮",
-                "  ⣿⣿    │  zickrian@portfolio   │",
+                "  ⣿⣿    │  mahateer@portfolio   │",
                 "  ⣿⣿    ╰──────────────────────╯",
                 "  ⣿⣿    ─────────────────────────",
                 `  ⣿⣿    Name     : ${p.name}`,
@@ -175,7 +175,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
     const isOpen = controlledIsOpen ?? internalIsOpen;
     const setIsOpen = onOpenChange ?? setInternalIsOpen;
     const [messages, setMessages] = useState([
-        { type: 'bot', text: "System Online. I'm Zickrian's AI Assistant. Type `help` for commands, or ask me anything!" }
+        { type: 'bot', text: "System Online. I'm Mahateer's AI Assistant. Type `help` for commands, or ask me anything!" }
     ]);
     const [inputValue, setInputValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
@@ -406,7 +406,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
             setIsStreaming(true);
             setMessages(prev => [...prev, { type: 'bot', text: "" }]);
 
-            const safeText = sanitizeAssistantResponse(fullText.trim())
+            const safeText = fullText.trim()
                 || (lang === 'en'
                     ? 'I can help with my portfolio projects, skills, and experience. Ask me anything there.'
                     : 'Aku bisa bantu jawab soal portofolio, project, skill, dan pengalaman aku.');
@@ -481,7 +481,7 @@ const ChatWidget = ({ isOpen: controlledIsOpen, onOpenChange }) => {
                                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                             </div>
-                            <span className="ml-2 text-neutral-400 text-xs">zickrian_bot - -bash</span>
+                            <span className="ml-2 text-neutral-400 text-xs">mahateer_bot - -bash</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="text-neutral-600 text-[10px] hidden md:inline">Ctrl+K</span>

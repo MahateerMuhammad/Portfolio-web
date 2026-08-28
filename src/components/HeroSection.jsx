@@ -30,7 +30,7 @@ const LocationTimeBadge = () => {
   return (
     <div className="flex items-center justify-center gap-3 sm:gap-5 font-mono text-xs uppercase tracking-[0.15em] text-white/50">
       <div className="flex items-center gap-2">
-        <span className="font-bold text-white/70">Based in Indonesia</span>
+        <span className="font-bold text-white/70">Based in Pakistan</span>
       </div>
       <div className="w-[1px] h-3 bg-black/15" />
       <div className="flex items-center gap-1.5 tabular-nums">
@@ -245,10 +245,10 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
         {/* 2. Massive Clear Typography */}
         <div className="flex flex-col items-center justify-center relative w-full mb-4 md:mb-5">
           {/* Left Decoration */}
-          <OrbitingDecoration icon={Code2} delay={0.15} className="left-0 sm:left-2 lg:left-16 top-2" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
-          <OrbitingDecoration icon={Terminal} delay={0.45} className="left-6 sm:left-12 lg:left-28 bottom-8 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
-          <OrbitingDecoration icon={Server} delay={0.35} className="left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 hidden md:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
-          <OrbitingDecoration icon={Activity} delay={0.55} className="left-20 sm:left-32 lg:left-48 -top-8 hidden lg:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Code2} delay={0.15} className="-left-4 sm:-left-6 lg:-left-20 xl:-left-32 top-2" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Terminal} delay={0.45} className="left-2 sm:left-4 lg:-left-4 xl:-left-12 bottom-8 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Server} delay={0.35} className="-left-6 sm:-left-10 lg:-left-28 xl:-left-40 top-1/2 -translate-y-1/2 hidden md:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Activity} delay={0.55} className="left-12 sm:left-20 lg:left-4 xl:-left-4 -top-8 hidden lg:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
 
           <Gsap.h1
             initial={false}
@@ -256,7 +256,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="text-[clamp(4.25rem,14vw,9rem)] font-black uppercase tracking-tight text-white leading-[0.88]"
           >
-            FIRDAUS
+            MAHATEER
           </Gsap.h1>
 
           <Gsap.h1
@@ -265,14 +265,14 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-[clamp(4.25rem,14vw,9rem)] font-black uppercase tracking-tight text-transparent leading-[0.88] mt-2 sm:mt-0 font-outline-fallback"
           >
-            ZICKRIAN
+            MUHAMMAD
           </Gsap.h1>
 
           {/* Right Decoration */}
-          <OrbitingDecoration icon={Database} delay={0.28} className="right-0 sm:right-2 lg:right-16 top-10" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
-          <OrbitingDecoration icon={Cpu} delay={0.58} className="right-6 sm:right-12 lg:right-28 -bottom-2 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
-          <OrbitingDecoration icon={Network} delay={0.42} className="right-2 sm:right-4 lg:right-6 top-1/3 hidden md:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
-          <OrbitingDecoration icon={Layers} delay={0.65} className="right-24 sm:right-36 lg:right-56 -top-4 hidden lg:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Database} delay={0.28} className="-right-4 sm:-right-6 lg:-right-20 xl:-right-32 top-10" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Cpu} delay={0.58} className="right-2 sm:right-4 lg:-right-4 xl:-right-12 -bottom-2 hidden sm:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Network} delay={0.42} className="-right-6 sm:-right-10 lg:-right-28 xl:-right-40 top-1/3 hidden md:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
+          <OrbitingDecoration icon={Layers} delay={0.65} className="right-12 sm:right-20 lg:right-4 xl:-right-4 -top-4 hidden lg:flex" isRevealed={isRevealed} enableAmbientMotion={enableAmbientMotion} />
         </div>
 
         {/* 3. Clean Slogan with Green Accent */}
@@ -283,10 +283,10 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           className="flex flex-col items-center gap-2 mt-0"
         >
           <h2 className="text-[clamp(1.35rem,4.2vw,2.25rem)] font-bold text-white/80 tracking-tight flex items-center justify-center flex-wrap gap-2 px-2">
-            Architecting <span className="bg-cyan-400/30 px-2 rounded-md ring-1 ring-cyan-500/20">Intelligent</span> Paradigms<span className="text-cyan-500 font-extrabold -ml-1">.</span>
+            Building <span className="bg-cyan-400/30 px-2 rounded-md ring-1 ring-cyan-500/20">Production-Grade</span> AI Systems<span className="text-cyan-500 font-extrabold -ml-1">.</span>
           </h2>
           <p className="font-sans text-base text-white/60 max-w-xl leading-7 mt-2 px-4">
-            AI Engineer & Full-Stack Developer specializing in high-performance, scalable systems.
+            AI/ML Engineer & Full-Stack Developer specializing in Applied LLMs and robust architectures.
           </p>
         </Gsap.div>
 
@@ -306,11 +306,12 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             </span>
           </button>
           <a
-            href="/cv.pdf"
-            download
-            className="group flex items-center gap-2 bg-transparent text-white border-2 border-white/20 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-black hover:text-cyan-400 transition-all duration-300"
+            href="https://github.com/MahateerMuhammad"
+            target="_blank"
+            rel="noreferrer"
+            className="group relative bg-cyan-400 text-black px-6 sm:px-8 py-3.5 sm:py-4 font-mono text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] rounded-[3px] hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden w-full sm:w-auto"
           >
-            Download CV <Download size={16} className="group-hover:translate-y-0.5 transition-transform" />
+            View GitHub <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </Gsap.div>
 

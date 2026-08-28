@@ -2,20 +2,18 @@ import { memo, useState, lazy, Suspense } from 'react';
 import { Gsap } from '../utils/gsapAnimate';
 import { Trophy, ArrowUpRight, MapPin } from 'lucide-react';
 
-const HackathonDetailModal = lazy(() => import('./HackathonDetailModal'));
-
 /* ─────────────────────────────────────────
    Static data
    ───────────────────────────────────────── */
 const achievements = [
   {
     icon: Trophy,
-    rank: 'National',
-    category: 'Hackathon',
-    title: 'National Finalist',
-    event: 'Base Indonesia Hackathon 2025',
-    year: '2025',
-    description: 'Competed against top engineering teams nationwide, building a decentralized solution on the Base blockchain.',
+    rank: 'High Score',
+    category: 'AI Research',
+    title: 'MedHallu Benchmark Improvement',
+    event: 'MedTrust DPO Fine-tuning',
+    year: '2024',
+    description: 'Improved base F1 score from 0.535 to 0.650 on the MedHallu benchmark using Direct Preference Optimization (DPO).',
   },
 ];
 
@@ -26,10 +24,10 @@ const STATS = [
 ];
 
 const CAPABILITIES = [
-  'Machine Learning / CV',
-  'Generative AI & LLMs',
+  'LLM Systems in Production',
+  'Preference Optimization (DPO)',
   'Full-Stack Delivery',
-  'Data Engineering',
+  'Mobile (Flutter)',
 ];
 
 /* ─────────────────────────────────────────
@@ -39,7 +37,6 @@ const AchievementCard = ({ achievement, index, onClick }) => {
   const Icon = achievement.icon;
   return (
     <Gsap.div
-      onClick={onClick}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -102,16 +99,7 @@ const AchievementCard = ({ achievement, index, onClick }) => {
           </div>
         </div>
 
-        {/* Footer CTA */}
-        <div className="mt-6 pt-5 border-t border-white/[0.07] flex items-center justify-between">
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/28">
-            Click to view details
-          </span>
-          <div className="flex items-center gap-1.5 text-white/38 group-hover:text-white transition-colors duration-300">
-            <span className="font-mono text-[9px] uppercase tracking-[0.16em] font-bold">Open Highlight</span>
-            <ArrowUpRight size={13} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-          </div>
-        </div>
+
       </div>
     </Gsap.div>
   );
@@ -121,8 +109,6 @@ const AchievementCard = ({ achievement, index, onClick }) => {
    Main Component
    ───────────────────────────────────────── */
 const AboutSection = memo(function AboutSection() {
-  const [showHackathonDetail, setShowHackathonDetail] = useState(false);
-
   return (
     <section id="about-section" className="py-20 md:py-28 w-full relative bg-[#0A0A0A] overflow-hidden">
 
@@ -173,7 +159,7 @@ const AboutSection = memo(function AboutSection() {
                   <source srcSet="/profilee.webp" type="image/webp" />
                   <img
                     src="/profilee.webp"
-                    alt="Firdaus Zickrian"
+                    alt="Mahateer Muhammad"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover object-top grayscale-[25%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -183,7 +169,7 @@ const AboutSection = memo(function AboutSection() {
                 {/* Name plate at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 px-5 pt-10 pb-4 bg-gradient-to-t from-black/65 via-black/30 to-transparent z-20">
                   <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/50 mb-0.5">Name</p>
-                  <p className="text-white font-bold text-[15px] tracking-wide leading-snug">Firdaus Zickrian</p>
+                  <p className="text-white font-bold text-[15px] tracking-wide leading-snug">Mahateer Muhammad</p>
                 </div>
 
                 {/* Corner brackets */}
@@ -207,7 +193,7 @@ const AboutSection = memo(function AboutSection() {
                 <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/32 mb-1.5">Location</p>
                 <div className="flex items-center gap-1.5">
                   <MapPin size={11} className="text-white/38 shrink-0" />
-                  <span className="text-[13px] font-bold text-white">Indonesia</span>
+                  <span className="text-[13px] font-bold text-white">Pakistan</span>
                 </div>
               </div>
             </div>
@@ -238,13 +224,13 @@ const AboutSection = memo(function AboutSection() {
             >
               {/* Eyebrow */}
               <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-white/30 mb-5">
-                Based in Indonesia — Open to Work
+                Based in Pakistan — Open to Work
               </p>
 
               {/* Main title */}
               <h2 className="font-display font-bold tracking-[-0.025em] leading-[1.08] text-white">
                 <span className="block text-[44px] sm:text-[56px] lg:text-[64px] xl:text-[72px]">
-                  AI Engineer
+                  AI/ML Engineer
                 </span>
 
                 <span className="block text-[22px] sm:text-[26px] lg:text-[30px] xl:text-[34px] font-medium tracking-[-0.01em] text-white/55 mt-2">
@@ -276,7 +262,7 @@ const AboutSection = memo(function AboutSection() {
               className="space-y-4 text-[15px] md:text-[15.5px] font-light text-white/60 leading-[1.88] max-w-[580px]"
             >
               <p>
-                I'm <strong className="text-white font-semibold">Firdaus Zickrian</strong>, an AI Engineer focused on building intelligent systems that are not only innovative, but production-ready and measurable in real-world environments.
+                I'm <strong className="text-white font-semibold">Mahateer Muhammad</strong>, an AI Engineer focused on building intelligent systems that are not only innovative, but production-ready and measurable in real-world environments.
               </p>
               <p>
                 I specialize in Computer Vision and LLM-powered products, with full-stack delivery as a supporting strength to move ideas from prototype to reliable digital products.
@@ -334,7 +320,6 @@ const AboutSection = memo(function AboutSection() {
                       key={index}
                       achievement={achievement}
                       index={index}
-                      onClick={() => setShowHackathonDetail(true)}
                     />
                   ))}
                 </div>
@@ -345,13 +330,7 @@ const AboutSection = memo(function AboutSection() {
         </div>
       </div>
 
-      {/* Modal */}
-      <Suspense fallback={null}>
-        <HackathonDetailModal
-          isOpen={showHackathonDetail}
-          onClose={() => setShowHackathonDetail(false)}
-        />
-      </Suspense>
+
 
     </section>
   );

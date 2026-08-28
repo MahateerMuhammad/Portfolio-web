@@ -43,7 +43,7 @@ export default function ProjectCaseLayout({
           </div>
           <button
             onClick={onClose}
-            className="flex items-center gap-2 rounded-full border border-white/10 bg-white px-5 py-2 text-xs md:text-sm font-bold tracking-wide uppercase hover:bg-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-white text-black px-5 py-2 text-xs md:text-sm font-bold tracking-wide uppercase hover:bg-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
           >
             <ArrowUpRight className="rotate-[225deg]" size={16} />
             {closeLabel}
@@ -65,7 +65,7 @@ export default function ProjectCaseLayout({
             className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tighter text-white mb-6"
           >
             {project.title.split(' ').map((word, i, arr) => (
-              <span key={i} className={i === arr.length - 1 ? "text-transparent" : ""} style={i === arr.length - 1 ? { WebkitTextStroke: '2px black' } : {}}>
+              <span key={i} className={i === arr.length - 1 ? "text-transparent" : ""} style={i === arr.length - 1 ? { WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.4)' } : {}}>
                 {word}{i !== arr.length - 1 ? ' ' : ''}
               </span>
             ))}
@@ -133,6 +133,16 @@ export default function ProjectCaseLayout({
 
           {/* Custom Section Block */}
           {preFeatureSection}
+
+          {/* Overview Section */}
+          {project.overview && (
+            <div className="mt-8 md:mt-12 text-base md:text-lg leading-relaxed text-white/80 max-w-4xl">
+              <h2 className="text-xs font-mono font-bold uppercase tracking-[0.12em] md:tracking-[0.16em] text-white/40 mb-6 flex items-center gap-3">
+                <span className="w-6 h-[1px] bg-black/20" /> Overview
+              </h2>
+              <div className="whitespace-pre-wrap">{project.overview}</div>
+            </div>
+          )}
 
           {/* Main Grid: Features and Impact side-by-side on desktop */}
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 mt-16 border-t border-white/10 pt-16">

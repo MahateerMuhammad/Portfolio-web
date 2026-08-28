@@ -2,14 +2,19 @@ import { lazy } from "react";
 import { PROJECT_META_BY_SLUG } from "../data/projectMeta";
 
 const PROJECT_DETAIL_COMPONENTS = {
-  "diabetes-classification": lazy(() => import("./DiabetesClassificationDetail")),
-  leadsup: lazy(() => import("./LeadsUpDetail")),
-  polsekrembang: lazy(() => import("./PolsekRembangDetail")),
-  floodsegmen: lazy(() => import("./FloodSegmenDetail")),
-  qmeal: lazy(() => import("./QMealDetail")),
-  lostandfound: lazy(() => import("./LostAndFoundDetail")),
-  imageclas: lazy(() => import("./ImageClasDetail")),
-  "financial-assistant-bot": lazy(() => import("./FinancialAssistantDetail")),
+  "multi-agent-debate": lazy(() => import("./MultiAgentDebateDetail")),
+  "medtrust": lazy(() => import("./MedtrustDetail")),
+  "deepvision": lazy(() => import("./DeepvisionDetail")),
+  "clinical-digital-twin": lazy(() => import("./ClinicalDigitalTwinDetail")),
+
+  "brain-tumor-detection": lazy(() => import("./BrainTumorDetectionDetail")),
+  "konexea": lazy(() => import("./KonexeaDetail")),
+  "calinga": lazy(() => import("./CalingaDetail")),
+  "al-safeena": lazy(() => import("./AlSafeenaDetail")),
+  "chw-tb-tracker": lazy(() => import("./ChwTbTrackerDetail")),
+  "joytox": lazy(() => import("./JoytoxDetail")),
+  "inner-armor": lazy(() => import("./InnerArmorDetail")),
+  "zeene": lazy(() => import("./ZeeneDetail")),
 };
 
 export function getProjectRouteConfig(slug) {

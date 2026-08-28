@@ -1,174 +1,171 @@
-// ─── Portfolio Data (single source of truth for site content) ────
-//
-// This is the LIVE data the site renders and the AI assistant reads. It is
-// imported by `src/services/aiContext.js` and `src/components/ChatWidget.jsx`.
-//
-// CUSTOMIZING: edit the values below with your own details. For a clean,
-// fully-commented starter template (with guidance on every field), see
-// `src/data/examplePortfolioData.js`. See also `docs/customization.md`.
-//
-// FIELDS TO EDIT:
-//   profile.name / role / bio / location / email / socials  → your identity
-//   experience[]   → your work / organization / education history
-//   techStack[]    → your skills, grouped by `category`
-//   projects[]     → short project summaries (keep `slug` in sync with
-//                    projectMeta.js + projectDetailsData.js)
-//   achievements[] → awards / hackathons (optional)
-//   capabilities[] → high-level specializations
 export const PORTFOLIO_DATA = {
     profile: {
-        name: "Firdaus Khotibul Zickrian",
-        role: "AI Engineer & Full-Stack Developer",
-        bio: "Passionate about building intelligent systems that learn, adapt, and solve complex problems. Specializing in Generative AI, Deep Learning, and Modern Web Technologies.",
-        location: "Indonesia",
-        email: "firdauskhotibulzickrian@gmail.com",
+        name: "Mahateer Muhammad",
+        role: "AI/ML Engineer | Applied LLM Systems | Full-Stack Developer",
+        bio: "I build production-grade AI systems — LLM orchestration with real security hardening, preference-optimization fine-tunes, clinical data pipelines, and interactive ML tooling. Let's build something that doesn't hallucinate.",
+        location: "Pakistan",
+        email: "mahateermuhammad100@gmail.com",
         socials: {
-            github: "https://github.com/zickrian",
-            linkedin: "https://linkedin.com/in/firdauskhotibulzickrian/"
+            github: "https://github.com/MahateerMuhammad",
+            linkedin: "https://www.linkedin.com/in/mahateer-muhammad-a74284356"
         }
     },
     experience: [
         {
-            title: "Google Developer Student Club - Universitas Dian Nuswantoro",
-            period: "Nov 2023 - Nov 2025",
+            title: "Co-founder & Developer - UXELERATE",
+            period: "Present",
             description: [
-                "Actively participating in developer community events, workshops, and collaborative study sessions.",
-                "Contributed to 5+ community discussions across 4 projects, sharing insights on development and analytics."
+                "Leading technical development and building production-grade systems.",
+                "Specializing in LLM Systems in Production, Preference Optimization, and Interactive ML Tooling."
             ]
         },
         {
-            title: "Data Analyst - Blockvizo",
-            period: "Jun 2024 - Jul 2025",
+            title: "Software Developer Intern - Bitbytes",
+            period: "Jun 2023 - Sep 2023",
             description: [
-                "Processed 50,000+ game hash history records, examining item drop patterns and building probability-based prediction models that improved forecasting accuracy by 35%.",
-                "Delivered actionable insights through data visualization dashboards, supporting strategic decisions for decentralized projects and reducing analysis time by 40%.",
-                "Specializing in predictive airdrop and winning probability analysis by examining large-scale on-chain data from 10+ Web3 ecosystems"
+                "Assisted in full-stack software development tasks and collaborated with cross-functional teams.",
+                "Contributed to building scalable applications and resolving critical bugs."
             ]
         },
         {
-            title: "Lab Assistant - Programming Lab, Universitas Dian Nuswantoro",
-            period: "Aug 2025 - Present",
+            title: "Independent AI/ML Researcher & Engineer",
+            period: "Continuous",
             description: [
-                "Assisted in over 3 academic lab sessions per week for programming and software development courses.",
-                "Mentored around 110 junior students by guiding them through practical exercises and foundational programming concepts."
-            ]
-        },
-        {
-            title: "Machine Learning Cohort - ASAH (led by Dicoding x Accenture)",
-            period: "Aug 2025 - Jan 2026",
-            description: [
-                "Served as Project Manager, leading a cross-functional team of 5 machine learning engineers and React developers to build solutions addressing real-world business problems.",
-                "Managing the development of a banking sales prediction portal that improves sales efficiency by prioritizing high-probability leads and reducing time wasted on low-potential prospects.",
-                "Coordinated project timelines, technical discussions, and workflow execution across departments, improving team time efficiency by 70% and ensuring on-time delivery."
-            ]
-        },
-        {
-            title: "AI Engineer Cohort - PIJAK (led by Dicoding x IBM)",
-            period: "Jan 2026 - Present",
-            description: [
-                "Selected as one of the top talents for an intensive AI Engineering bootcamp focusing on Generative AI, Deep Learning, and Ethics.",
-                "Developing advanced AI solutions using Python, applying industry-standard practices from IBM SkillsBuild curriculum.",
-                "Collaborating on a capstone project to solve real-world challenges through innovative Artificial Intelligence implementation."
+                "Trained a DPO model on a single T4 in ~2 hours to drastically improve factual grounding.",
+                "Developed a production pipeline processing 546K+ MIMIC-IV hospital stays into ML-ready datasets.",
+                "Built an interactive Neural Network Visualizer with 255 tests and zero faked data."
             ]
         }
     ],
     techStack: [
         { name: "Python", category: "Language" },
-        { name: "TensorFlow", category: "Deep Learning" },
+        { name: "JavaScript", category: "Language" },
+        { name: "TypeScript", category: "Language" },
+        { name: "C++", category: "Language" },
+        { name: "Dart", category: "Language" },
+        
         { name: "PyTorch", category: "Deep Learning" },
+        { name: "TensorFlow", category: "Deep Learning" },
+        { name: "Keras", category: "Deep Learning" },
+        { name: "HuggingFace", category: "Deep Learning" },
+        { name: "Scikit-Learn", category: "Machine Learning" },
+        
         { name: "React", category: "Frontend" },
+        { name: "Vite", category: "Frontend" },
         { name: "Next.js", category: "Frontend" },
         { name: "Tailwind CSS", category: "Frontend" },
+        { name: "D3.js", category: "Frontend" },
+        { name: "Flutter", category: "Mobile" },
+        
+        { name: "Apache Spark", category: "Data Engineering" },
+        { name: "Pandas", category: "Data Engineering" },
         { name: "PostgreSQL", category: "Database" },
-        { name: "Supabase", category: "Backend" },
-        { name: "Docker", category: "DevOps" },
-        { name: "MLOps", category: "Machine Learning Operations" },
-        { name: "Scikit-Learn", category: "Machine Learning" },
-        { name: "OpenCV", category: "Computer Vision" },
+        { name: "MongoDB", category: "Database" },
+        
         { name: "FastAPI", category: "Backend" },
-        { name: "Streamlit", category: "ML Deployment" },
-        { name: "Pandas", category: "Data Analysis" },
-        { name: "Matplotlib", category: "Visualization" },
-        { name: "Seaborn", category: "Visualization" },
-        { name: "Keras", category: "Deep Learning" },
-        { name: "Numpy", category: "Data Science" },
-        { name: "Google Gemini", category: "LLM / GenAI" },
-        { name: "RAG", category: "AI Architecture" },
-        { name: "ExpressJS", category: "Backend" },
-        { name: "Microsoft Azure", category: "Cloud" }
+        { name: "Express", category: "Backend" },
+        { name: "Node.js", category: "Backend" },
+        { name: "Redis", category: "Backend" },
+        { name: "Supabase", category: "Backend" },
+        
+        { name: "AWS", category: "Cloud" },
+        { name: "Docker", category: "DevOps" },
+        { name: "Firebase", category: "Cloud" }
     ],
     projects: [
         {
-            slug: "diabetes-classification",
-            title: "Diabetes Classification",
-            category: "AI / Machine Learning",
-            description: "Machine Learning model to classify diabetes risk based on medical data."
+            slug: "multi-agent-debate",
+            title: "Multi-Agent Debate Framework",
+            category: "Production LLM Orchestration",
+            description: "A single API call, 25 nested LLM calls, and enough hardening to survive contact with the real world."
         },
         {
-            slug: "leadsup",
-            title: "LeadsUp",
-            category: "AI-Powered Lead Scoring",
-            description: "AI system for scoring sales leads to prioritize high-value prospects."
+            slug: "medtrust",
+            title: "MedTrust",
+            category: "LLM Fine-Tuning / DPO",
+            description: "Teaching a 7B model to stop confidently making things up in clinical answers using Direct Preference Optimization."
         },
         {
-            slug: "polsekrembang",
-            title: "Polsek Rembang Virtual Assistant",
-            category: "RAG Chatbot / AI Assistant",
-            description: "RAG-based chatbot to assist with police station inquiries and services."
+            slug: "deepvision",
+            title: "DeepVision",
+            category: "Interactive ML Tooling",
+            description: "Interactive Neural Network Visualizer — Neural networks, explained by the network itself."
         },
         {
-            slug: "floodsegmen",
-            title: "Flood Segmentation Analyzer",
-            category: "Computer Vision",
-            description: "Computer Vision system for analyzing flood patterns and segmentation from satellite/drone imagery."
+            slug: "clinical-digital-twin",
+            title: "Clinical Digital Twin",
+            category: "Data Engineering & RAG",
+            description: "Patient Risk & Decision-Support System turning 40GB of raw hospital data into a risk-scoring RAG agent."
         },
         {
-            slug: "qmeal",
-            title: "QMeal E-Kantin",
-            category: "Multi-Vendor Ordering Platform",
-            description: "Digital canteen ordering system supporting multiple vendors and efficient queue management."
+            slug: "brain-tumor-detection",
+            title: "Brain Tumor Detection",
+            category: "Medical Imaging / Explainable AI",
+            description: "Healthcare AI that shows its work via Grad-CAM explainability layered on every prediction."
         },
         {
-            slug: "lostandfound",
-            title: "SITEMU Lost & Found Portal",
-            category: "Web Application",
-            description: "Community platform for reporting and finding lost items."
+            slug: "konexea",
+            title: "Konexea (Social-Swap)",
+            category: "Social Media App",
+            description: "A modern social media application built with Flutter, featuring AI-powered interactions."
         },
         {
-            slug: "imageclas",
-            title: "Vegetable Image Classification",
-            category: "Computer Vision",
-            description: "Deep Learning model for classifying different types of vegetables from images."
+            slug: "calinga",
+            title: "CALiNGA",
+            category: "On-Demand Healthcare",
+            description: "On-demand healthcare platform with live location tracking and provider matching."
         },
         {
-            slug: "financial-assistant-bot",
-            title: "Financial Assistant Bot",
-            category: "AI / Fintech",
-            description: "AI bot for personal finance management and advice."
+            slug: "al-safeena",
+            title: "Al-Safeena",
+            category: "HVAC Service Ecosystem",
+            description: "A dual-role mobile application connecting consumers with verified HVAC technicians."
+        },
+        {
+            slug: "chw-tb-tracker",
+            title: "CHW TB Tracker",
+            category: "Health Data Collection",
+            description: "Flutter/Firebase app for community health workers to register patients and log visits offline."
+        },
+        {
+            slug: "joytox",
+            title: "Joytox",
+            category: "Next-Gen Social Platform",
+            description: "Live streaming, short video reels, and social feed in one seamless experience."
+        },
+        {
+            slug: "inner-armor",
+            title: "Inner Armor Tactical Coach",
+            category: "Mental Resilience Training",
+            description: "Tactical coaching and mental resilience training based on Andrew D. Wittman's doctrine."
+        },
+        {
+            slug: "zeene",
+            title: "ZEENE",
+            category: "E-Commerce Platform",
+            description: "A Curated E-Commerce Platform for Modern Lifestyle Essentials built with Next.js."
         }
     ],
     achievements: [
         {
-            title: "National Finalist - Base Indonesia Hackathon 2025",
-            project: "Base Realms",
-            description: "Built an onchain 16-bit RPG battle game on Base chain with QRIS payment integration, ERC-721/ERC-1155 NFTs, and seasonal reward pools. Onboards non-crypto users through familiar payment methods.",
-            team: "Terra Bit (Firdaus Khotibul Zickrian & Gagah Athallah Fatha)",
-            track: "Base Track",
-            techStack: ["Solidity", "Next.js", "TypeScript", "JavaScript", "CSS"],
+            title: "MedHallu Benchmark Improvement",
+            project: "MedTrust",
+            description: "Improved base F1 score from 0.535 to 0.650 on the MedHallu benchmark using Direct Preference Optimization (DPO) fine-tuning on a 7B model. Hard-tier score (0.586) landed close to GPT-4o's reported ~0.625.",
+            team: "Mahateer Muhammad",
+            track: "AI Research",
+            techStack: ["PyTorch", "Unsloth", "Kaggle"],
             links: {
-                devfolio: "https://devfolio.co/projects/base-realms-b63a",
-                github: "https://github.com/zickrian/Base-Realms",
-                live: "https://baserealms.app/"
+                github: "https://github.com/MahateerMuhammad/MedTrust"
             }
         }
     ],
     capabilities: [
-        "Machine Learning",
-        "Deep Learning",
-        "Computer Vision",
-        "Natural Language Processing (NLP)",
-        "Machine Learning Operations (MLOps)",
-        "Data Analysis",
-        "Web Development"
+        "LLM Systems in Production",
+        "Preference Optimization (DPO)",
+        "Interactive ML Tooling",
+        "Clinical Data Engineering",
+        "Medical Imaging",
+        "Cross-Platform Mobile (Flutter)",
+        "Full-Stack Web Development"
     ]
 };

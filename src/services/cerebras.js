@@ -1,28 +1,11 @@
 import { generateSystemPrompt, buildScopedContext } from './aiContext';
 
 // ─────────────────────────────────────────────────────────────────
-// ⚠️  SECURITY WARNING — DEMO-ONLY (NOT PRODUCTION-SAFE) ⚠️
+// This module sends chat completion requests to the secure Serverless 
+// Backend Proxy (`/api/chat`).
 // ─────────────────────────────────────────────────────────────────
-// This module calls the Cerebras API DIRECTLY FROM THE BROWSER using a key read
-// from `import.meta.env`. Vite inlines every `VITE_*` / `REACT_APP_*` variable into
-// the CLIENT BUNDLE at build time, so this key is shipped to every visitor and is
-// publicly readable via DevTools or the bundled JS.
-//
-// This is fine for LOCAL DEVELOPMENT and quick DEMOS, but it is NOT SAFE for
-// production with a private/billable key — anyone can extract and abuse it.
-//
-// For production, route requests through a server-side / serverless proxy that
-// holds the key as a SERVER SECRET, and have the frontend call your own endpoint
-// (e.g. POST /api/chat) instead of the provider directly. See docs/ai-terminal.md
-// and SECURITY.md for a recommended architecture and a proxy example.
-// ─────────────────────────────────────────────────────────────────
-const API_KEY = (
-    import.meta.env.VITE_CEREBRAS_API_KEY ||
-    import.meta.env.REACT_APP_CEREBRAS_API_KEY ||
-    ''
-).trim();
 
-const CEREBRAS_CHAT_COMPLETIONS_URL = 'https://api.cerebras.ai/v1/chat/completions';
+const BACKEND_CHAT_COMPLETIONS_URL = '/api/chat';
 
 // Error classification for granular UI feedback
 const classifyError = (error) => {
@@ -101,11 +84,6 @@ async function* parseOpenAICompatibleStream(response) {
  * @returns {AsyncGenerator<string>} - Yields text content chunks
  */
 export async function* streamCerebras(messages) {
-    if (!API_KEY) {
-        const error = new Error('Missing API key');
-        error.status = 401;
-        throw classifyError(error);
-    }
 
     const systemPrompt = generateSystemPrompt();
     const latestUserMessage = [...messages].reverse().find(m => m.role === 'user')?.content || '';
@@ -118,18 +96,13 @@ export async function* streamCerebras(messages) {
     ];
 
     try {
-        const response = await fetch(CEREBRAS_CHAT_COMPLETIONS_URL, {
+        const response = await fetch(BACKEND_CHAT_COMPLETIONS_URL, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${API_KEY}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                messages: conversation,
-                model: "gpt-oss-120b",
-                max_tokens: 1024,
-                temperature: 0.35,
-                stream: true,
+                messages: conversation
             }),
         });
 

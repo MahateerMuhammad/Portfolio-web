@@ -41,3 +41,5 @@ secret*.json
 
 # deploy/platform artifacts
 .vercel/
+.vercel
+.env*
