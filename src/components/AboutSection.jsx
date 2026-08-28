@@ -155,10 +155,28 @@ const AboutSection = memo(function AboutSection() {
                 {/* Hover desaturation overlay */}
                 <div className="absolute inset-0 bg-black/[0.12] group-hover:bg-transparent transition-colors duration-700 z-10 mix-blend-multiply pointer-events-none" />
 
+                {/* Transformers-style block reveal overlay */}
+                <div className="absolute inset-0 z-40 grid grid-cols-8 grid-rows-10 pointer-events-none">
+                  {Array.from({ length: 80 }).map((_, i) => {
+                    // Pre-calculate pseudo-random delays based on index so it doesn't cause hydration mismatch (though this is purely client-side via GSAP anyway)
+                    const delay = 0.1 + (Math.sin(i * 123.456) * 0.5 + 0.5) * 0.9;
+                    return (
+                      <Gsap.div
+                        key={i}
+                        initial={{ opacity: 1, scale: 1 }}
+                        whileInView={{ opacity: 0, scale: 0.2 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, ease: 'easeOut', delay }}
+                        className="bg-[#0A0A0A] w-[102%] h-[102%] origin-center"
+                      />
+                    );
+                  })}
+                </div>
+
                 <picture>
-                  <source srcSet="/profilee.webp" type="image/webp" />
+                  <source srcSet="/profile.webp" type="image/webp" />
                   <img
-                    src="/profilee.webp"
+                    src="/profile.webp"
                     alt="Mahateer Muhammad"
                     loading="lazy"
                     decoding="async"
